@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh; /* 100% de la altura del dispositivo (viewport) */
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* BARRA DE NAVEGACION */
+header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ESPACIO ENTRE SECCIONES */
+.principal{
+    margin-bottom: 10rem;
+}
+.segunda{
+    margin-bottom: 20rem;
+}
+
+/*Bloque 1*/
+.content-bloque1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 92vh; 
+    background: url('../images/blackhole.gif') no-repeat center center/cover;
+}
+
+.title {
+    color: red;
+    font-size: 5rem;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.subtitle {
+    color: #ffffff;    
+    font-size: 1.5rem; 
+    text-align: center;
+}
+
+.titleG {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/*Bloque 2*/
+.content-bloque2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+}
+
+
+
+/* Estilo de botones y listas desplegables */
+.unidad-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.unidad {
+    position: relative;
+    padding: 0 1rem;
+}
+
+.unidad:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.unidad button {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.unidad button:hover {
+    background-image: url('../images/calculosmatematicos.gif');
+
+    transform: scale(1.1);
+}
+
+
+.unidad ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.unidad ul.hidden {
+    max-height: 0;
+}
+
+.unidad ul li {
+    margin: 0.5rem 0;
+}
+
+.unidad ul li a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+/*Bloque 3*/
+.content-bloque3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    height: 50vh;
+}
+
+.title3 {
+    color: red;
+    font-size: 3.5rem;
+    font-weight: lighter;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.subtitle3 {
+    color: #ffffff;    
+    font-size: 1.5rem; 
+    text-align: center;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    max-width:60%; /* Ajusta este valor según el ancho deseado */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    line-height: 1.5rem;
+  }
+
+
+/* SISTEMA DE ESPERA 
+.sistema-espera .containerEspera {
+    width: 960px;
+    height: 540px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.sistema-espera .headerEspera {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.sistema-espera .headerEspera h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.sistema-espera .controlsEspera {
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #e9ecef;
+}
+
+.sistema-espera .controlsEspera label {
+    flex: 1 1 100%;
+}
+
+.sistema-espera .controlsEspera input, 
+.sistema-espera .controlsEspera button {
+    flex: 1 1 48%;
+}
+
+.sistema-espera .main-contentEspera {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.sistema-espera .queue-containerEspera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.sistema-espera #queue {
+    display: flex;
+    gap: 10px;
+}
+
+.sistema-espera .person {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.sistema-espera #service {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.sistema-espera .statsEspera {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.sistema-espera .statsEspera p {
+    color: black;
+}
+
+.sistema-espera canvas {
+    max-height: 150px;
+}
+
+.sistema-espera button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sistema-espera button:hover {
+    background-color: #0056b3;
+}*/

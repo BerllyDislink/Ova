@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos Estocásticos</title>
+    <link rel="stylesheet" href="/LineasDeEspera v2/style/styles.css">
+    <link rel="icon" href="icon1.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#calculadora">Calculadora Estadística</a></li>
+                <li><a href="#minijuegos">Minijuegos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content-bloque1">
+            <section id="principal">
+                <h1 class="title">Modelos de lineas de espera</h1>
+                <h1 class="subtitle">Explora y comprende los principales aspectos de los procesos estocásticos.</h1>
+            </section>
+        </div>
+
+        <div class="content-bloque2">
+            <section id="segunda">
+                <h1 class="titleG">Generalidades de procesos estocásticos</h1>
+                <p>Sumergete en definiciones, conceptos y formulas</p>
+            </section>
+                <div class="unidad-container">
+                    <div class="unidad">
+                        <button onclick="toggleList('unidad1')">Unidad 1</button>
+                        <ul id="unidad1" class="hidden">
+                            <li><a href="unidad1.html#tema1">Terminos asociados</a></li>
+                            <li><a href="unidad1.html#tema2">Procesos estocasticos</a></li>
+                            <li><a href="unidad1.html#tema3">Aplicaciones</a></li>
+                            <li><a href="unidad1.html#tema4">Distribuciones de probabilidad</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unidad">
+                        <button onclick="toggleList('unidad2')">Unidad 2</button>
+                        <ul id="unidad2" class="hidden">
+                            <li><a href="unidad2.html#tema1">Análisis de decisiones</a></li>
+                            <li><a href="unidad2.html#tema2">Árboles de decisiones</a></li>
+                            <li><a href="unidad2.html#tema3">Teoría de juegos</a></li>
+                            <li><a href="unidad2.html#tema4">Cadenas de markov             </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="unidad">
+                        <button onclick="toggleList('unidad3')">Unidad 3</button>
+                        <ul id="unidad3" class="hidden">
+                            <li><a href="unidad3.html#tema1">Modelos de inventarios        </a></li>
+                            <li><a href="unidad3.html#tema2">Modelos probabilísticos</a></li>
+                            <li><a href="unidad3.html#tema3">Sistema de inventario ABC</a></li>
+                            <li><a href="unidad3.html#tema3">Teoría de colas</a></li>
+                        </ul>
+                    </div>
+                </div>
+           
+        </div>
+
+        <div class="content-bloque3">
+            <section id="principal">
+                <h1 class="title3">¿Que son las lineas de espera?</h1>
+               
+                <p>También conocidas como modelos de colas, son herramientas matemáticas utilizadas para analizar sistemas en los que se forman filas de espera. Estos modelos ayudan a entender y optimizar la gestión de recursos limitados, como tiempo, espacio o personal, en sistemas donde hay una demanda que llega de manera aleatoria y requiere ser atendida.</p>
+            </section>
+        </div>
+   
+        <!--sistema de espera
+        <div class="sistema-espera">
+            <div class="containerEspera">
+                <div class="headerEspera">
+                    <h1>Simulación de Sistema de Espera</h1>
+                </div>
+                <div class="controlsEspera">
+                    <label for="llegada">Tasa de llegada (personas/segundo):</label>
+                    <input type="number" id="llegada" name="llegada" value="1">
+                    <label for="servicio">Tasa de servicio (personas/segundo):</label>
+                    <input type="number" id="servicio" name="servicio" value="1">
+                    <label for="maxCola">Tamaño máximo de la cola:</label>
+                    <input type="number" id="maxCola" name="maxCola" value="10">
+                    <label for="maxEspera">Tiempo máximo de espera (segundos):</label>
+                    <input type="number" id="maxEspera" name="maxEspera" value="30">
+                    <button id="pausar">Pausar</button>
+                    <button id="reiniciar">Reiniciar</button>
+                </div>
+                <div class="main-contentEspera">
+                    <div class="queue-containerEspera">
+                        <div id="queue"></div>
+                        <div id="service">Caja</div>
+                    </div>
+                    <div class="statsEspera">
+                        <p>Longitud promedio de la cola: 0.00</p>
+                        <p>Tiempo promedio de espera: 0.00 segundos</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+       
+    </main>
+  
+    <!--<script src="sistemaespera.js"></script> Le cambie el nombre al script-->
+    <script src="/LineasDeEspera v2/js/main.js"></script>
+    <script src="/LineasDeEspera v2/js/calculator.js"></script>
+    <script src="/LineasDeEspera v2/js/simulator.js"></script>
+    <script src="/LineasDeEspera v2/js/trivia.js"></script>
+    <script>
+        function toggleList(id) {
+            var list = document.getElementById(id);
+            if (list.classList.contains('hidden')) {
+                list.classList.remove('hidden');
+                list.style.maxHeight = list.scrollHeight + "px";
+            } else {
+                list.classList.add('hidden');
+                list.style.maxHeight = 0;
+            }
+        }
+    </script>
+</body>
+</html>

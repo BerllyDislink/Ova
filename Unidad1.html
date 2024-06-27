@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 1 - Procesos Estocásticos</title>
+    <link rel="stylesheet" href="/LineasDeEspera v2/style/unidades.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#tema1">Términos asociados</a></li>
+          <li><a href="#tema2">Procesos estocásticos</a></li>
+          <li><a href="#tema3">Aplicaciones</a></li>
+          <li><a href="#tema4">Distribuciones de probabilidad</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="tema1" class="slide">
+        <h1>Términos asociados</h1>
+        <h2>Principales términos asociados a los procesos estocásticos</h2>
+        <h3><br />Experimento</h3>
+        <p>
+          Un experimento es un procedimiento llevado a cabo para apoyar,
+          refutar, o validar una hipótesis. Los experimentos proporcionan idea
+          sobre causa-y-efecto por la demostración del resultado, qué ocurre
+          cuándo un factor particular es manipulado. Los experimentos varían
+          mucho en objetivo y escala, pero se apoyan en la repetición de
+          procedimientos y análisis lógico de los resultados.
+        </p>
+        <h3><br />Resultado</h3>
+        <p>
+          El resultado es el corolario, la consecuencia o el fruto de una
+          determinada situación o de un proceso. El concepto se emplea de
+          distintas maneras de acuerdo al contexto.
+        </p>
+        <button id="dado" class="dado-button"></button>
+        <p>
+          Da click en el dado para dar el resultado de sumar
+          <span id="num1">_</span> + <span id="num2">_</span> =
+          <span id="resultado">__</span>.
+        </p>
+        <h3><br />Evento</h3>
+        <p>
+          Los eventos son aquellos fenómenos que surgen de ocasiones no
+          rutinarias y que tienen objetivos de ocio, culturales, personales u
+          organizativos establecidos de forma separada a la actividad normal
+          diaria, cuya finalidad es ilustrar, celebrar, entretener o generar
+          experiencias en un grupo de personas.
+        </p>
+        <p>Obtener una cara al lanzar una moneda es un evento.</p>
+        <button id="moneda" class="moneda-button"></button>
+        <h3><br />Espacio muestral</h3>
+        <p>
+          El espacio muestral es el conjunto de todos los posibles resultados de
+          un experimento aleatorio y se suele representar como E (o bien como
+          omega, Ω, del alfabeto griego).
+        </p>
+        <p>
+          Cuando lanzamos una moneda, ¿cuáles son todos los posibles resultados
+          que podemos obtener? Que salga cara o cruz, ¿verdad? En total son dos
+          posibles resultados, por lo que el espacio muestral tiene 2 elementos.
+          E = {cara, cruz}
+        </p>
+        <h3><br />Variable discreta</h3>
+        <p>
+          Una variable discreta es aquella que está en condiciones de adoptar
+          valores de un conjunto numérico dado. Es decir: sólo adquiere valores
+          de un conjunto, no cualquier valor.<br />
+          Entre los valores potencialmente observables de una variable discreta
+          existe una distancia que resulta imposible de “completar” con valores
+          intermedios. Por lo tanto, entre dos valores hay, al menos, un valor
+          que no es observable.
+        </p>
+        <p>
+          Ejemplo: El número de automóviles que tiene una persona es una
+          variable discreta. Un hombre puede tener, por ejemplo, un automóvil,
+          dos automóviles o tres automóviles, por citar algunas posibilidades.
+          Pero no puede tener 1,6 automóviles ni 2,8 automóviles.
+        </p>
+        <h3><br />Variables continuas</h3>
+        <p>
+          Una variable continua es aquella que puede adoptar cualquier valor en
+          el marco de un intervalo que ya está predeterminado. Entre dos de los
+          valores, siempre puede existir otro valor intermedio, susceptible de
+          ser tomado como valor por la variable continua.
+        </p>
+        <p>
+          Ejemplo: Temperaturas registradas en un observatorio; tiempo en
+          recorrer una distancia en una carrera; contenido de alcohol en un
+          cuba-libre; estatura; tiempo de discurso de un político en las cortes
+          insultando a los del partido contrario.
+        </p>
+        <h3><br />Fenómenos aleatorios</h3>
+        <p>
+          Un fenómeno aleatorio es un evento cuyo resultado, bajo situaciones
+          similares, no se puede predecir.<br />Ejemplo: Crecimiento económico.
+        </p>
+        <h3><br />Distribución de probabilidad</h3>
+        <p>
+          La distribución de probabilidad es una herramienta fundamental para la
+          prospectiva, puesto que con ella es posible diseñar un escenario de
+          acontecimientos futuros considerando las tendencias actuales de
+          diversos fenómenos.
+        </p>
+      </section>
+
+      <section id="tema2" class="slide">
+        <h1>Procesos estocásticos</h1>
+        <h2>Principales procesos estocásticos</h2>
+        <h3>Procesos IID</h3>
+        <p>
+          Los procesos IID son una clase fundamental de procesos estocásticos.
+          Se caracterizan por dos propiedades:<br /><br />
+          Independencia: Las variables aleatorias en un proceso IID son
+          independientes entre sí. Esto significa que el valor de una variable
+          aleatoria no tiene ningún efecto sobre el valor de otra.<br /><br />
+          Idéntica distribución: Las variables aleatorias en un proceso IID
+          tienen la misma distribución de probabilidad. Esto significa que la
+          probabilidad de que una variable aleatoria tome un valor específico es
+          la misma para todas las variables aleatorias en el proceso.
+          <br /><br />
+          Ejemplos:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Lanzamiento de una moneda</strong>
+            <p>
+              Cada lanzamiento de una moneda es un proceso IID. La probabilidad
+              de obtener cara o cruz es la misma en cada lanzamiento, y los
+              lanzamientos son independientes entre sí.
+            </p>
+          </li>
+          <li>
+            <strong>Tiros de un dado</strong>
+            <p>
+              Cada tiro de un dado es un proceso IID. La probabilidad de obtener
+              cada número del 1 al 6 es la misma en cada tiro, y los tiros son
+              independientes entre sí.
+            </p>
+          </li>
+        </ul>
+        <h3>Ruido Blanco</h3>
+        <p>
+          El ruido blanco es un proceso estocástico con las siguientes
+          características:
+        </p>
+        <ul>
+          <li>
+            <strong>Valores aleatorios</strong>
+            <p>
+              Las muestras del proceso en diferentes puntos temporales son
+              independientes entre sí.
+            </p>
+          </li>
+          <li>
+            <strong>Media constante</strong>
+            <p>La media del proceso es constante en el tiempo.</p>
+          </li>
+          <li>
+            <strong>Varianza constante</strong>
+            <p>La varianza del proceso es constante en el tiempo.</p>
+          </li>
+          <li>
+            <strong>Autocorrelación nula</strong>
+            <p>
+              La autocorrelación del proceso es nula para cualquier retardo
+              (excepto el retardo cero).
+            </p>
+          </li>
+        </ul>
+        <h3>Analogía</h3>
+        <p>
+          Imagina que escuchas estática en una radio sin sintonizar ninguna
+          estación. El sonido aleatorio de la estática es similar al ruido
+          blanco: cada instante es independiente, con una intensidad promedio
+          constante (ni muy fuerte ni muy débil) y sin patrón repetitivo en el
+          tiempo.
+        </p>
+        <div class="ruido-blanco">
+          <center>
+            <h4>Estática</h4>
+            <img
+              id="ruidoBlanco"
+              src="/LineasDeEspera v2/images/noise_gray.png"
+              alt="Ruido blanco"
+            />
+          </center>
+        </div>
+        <h3>Proceso Gaussiano</h3>
+        <p>
+          Imagina una campana de Gauss, también conocida como distribución
+          normal. El proceso gaussiano es como una "alfombra" de estas campanas
+          de Gauss, donde cada punto en el espacio tiene su propia campana con
+          una altura y anchura específicas.
+        </p>
+        <h4>Características</h4>
+        <ul>
+          <li>
+            <strong>Distribución normal</strong>
+            <p>
+              Cualquier conjunto finito de variables del proceso gaussiano tiene
+              una distribución normal multivariante.
+            </p>
+          </li>
+          <li>
+            <strong>Media y covarianza</strong>
+            <p>
+              La media y la covarianza del proceso gaussiano definen la forma y
+              la ubicación de las campanas de Gauss en la "alfombra".
+            </p>
+          </li>
+          <li>
+            <strong>Continuidad</strong>
+            <p>
+              El proceso gaussiano es continuo, lo que significa que las
+              variables del proceso cambian suavemente de un punto a otro.
+            </p>
+          </li>
+        </ul>
+        <h3>Analogía</h3>
+        <p>
+          Imagina un terreno montañoso. La altura de cada punto del terreno se
+          puede modelar como una variable aleatoria que sigue una distribución
+          normal. Un proceso gaussiano nos permite describir la probabilidad de
+          encontrar cualquier altura en cualquier punto del terreno. Es como
+          tener un mapa detallado de las elevaciones, pero con la incertidumbre
+          natural del terreno montañoso
+        </p>
+
+        <div class="terreno">
+          <center>
+            <h4>Terreno</h4>
+            <img
+              src="/LineasDeEspera v2/images/terrain_3d.png"
+              alt="Terreno montañoso"
+            />
+          </center>
+        </div>
+        <h3>Proceso de Poisson</h3>
+        <p>
+          Imagina que la lluvia cae de forma aleatoria en un área. El proceso de
+          Poisson es como contar el número de gotas de lluvia que caen en un
+          punto específico durante un intervalo de tiempo determinado.
+        </p>
+        <h4>Características</h4>
+        <ul>
+          <li>
+            <strong>Llegadas independientes</strong>
+            <p>
+              Las llegadas de eventos en un proceso de Poisson son
+              independientes entre sí. La llegada de un evento no afecta la
+              probabilidad de que otro evento ocurra en el futuro.
+            </p>
+          </li>
+          <li>
+            <strong>Tasa constante</strong>
+            <p>
+              La tasa de llegada de eventos en un proceso de Poisson es
+              constante en el tiempo. En otras palabras, la probabilidad de que
+              un evento ocurra en un intervalo de tiempo pequeño es proporcional
+              a la longitud del intervalo.
+            </p>
+          </li>
+          <li>
+            <strong>Sin memoria</strong>
+            <p>
+              El proceso de Poisson no tiene memoria. La probabilidad de que un
+              evento ocurra en un intervalo de tiempo determinado no depende de
+              lo que haya sucedido en el pasado.
+            </p>
+          </li>
+        </ul>
+        <h3>Analogía</h3>
+        <p>
+          Imagina un techo plano durante una lluvia. Las gotas de lluvia que
+          caen sobre el techo se pueden modelar como eventos aleatorios que
+          ocurren en el tiempo. El proceso de Poisson nos permite describir la
+          probabilidad de que caiga un cierto número de gotas de lluvia en un
+          intervalo de tiempo específico. Es como contar las gotas de lluvia en
+          diferentes momentos, pero teniendo en cuenta la naturaleza aleatoria
+          de la lluvia.
+        </p>
+        <div class="lluvia">
+          <center>
+            <h4>Gotas de lluvia</h4>
+            <img
+              src="/LineasDeEspera v2/images/rain.gif"
+              alt="gotas de lluvia"
+            />
+          </center>
+        </div>
+      </section>
+
+      <section id="tema3" class="slide">
+        <h1>Aplicaciones</h1>
+        <p>
+          En este apartado se hablará sobre las aplicaciones de algunos de los
+          procesos antes mencionandos en el anterior apartado.
+        </p>
+        <h3>Ruido blanco</h3>
+        <p>
+          Se puede usar para modelar errores en modelos de regresión o para
+          detectar cambios en la dinámica de un sistema.
+        </p>
+        <ul>
+          <li>
+            <strong>Análisis de series temporales</strong>
+            <p>
+              Se puede usar para modelar errores en modelos de regresión o para
+              detectar cambios en la dinámica de un sistema.
+            </p>
+            <button id="mostrarGrafico">Mostrar Gráfico</button>
+            <center><div id="graficoContainer"></div></center>
+          </li>
+          <li>
+            <strong>Simulación de Monte Carlo</strong>
+            <p>
+              Se puede usar para generar números aleatorios para simulaciones de
+              sistemas complejos.
+            </p>
+            <button id="generarNumeroAleatorio">
+              Generar Número Aleatorio
+            </button>
+            <center><h4 color id="resultadoNumeroAleatorio"></h4></center>
+          </li>
+          <li>
+            <strong>Ingeniería de telecomunicaciones</strong>
+            <p>
+              Se puede usar para modelar el ruido en sistemas de comunicación.
+            </p>
+            <button id="simularRuidoButton">Simular Ruido</button>
+            <center><h4 id="resultadoSimulacion"></h4></center>
+          </li>
+        </ul>
+        <h3>Proceso Gaussiano</h3>
+        <ul>
+          <li>
+            <strong>Finanzas</strong>
+            <p>
+              El proceso Gaussiano se utiliza para modelar el precio de las
+              acciones y otros activos finacieros.
+            </p>
+          </li>
+          <li>
+            <strong>Ingeniería</strong>
+            <p>
+              El proceso gaussiano se utiliza para modelar señales en sistemas
+              de control y comunicaciones.
+            </p>
+          </li>
+          <li>
+            <strong>Aprendizaje automático</strong>
+            <p>
+              El proceso gaussiano se utiliza en algoritmos de aprendizaje
+              automático para realizar tareas como la clasificación y la
+              regresión.
+            </p>
+          </li>
+        </ul>
+        <h3>Proceso de Poisson</h3>
+        <ul>
+          <li>
+            <strong>Telecomunicaciones</strong>
+            <p>
+              El proceso de Poisson se utiliza para modelar el tráfico en redes
+              de telecomunicaciones.
+            </p>
+          </li>
+          <li>
+            <strong>Finanzas</strong>
+            <p>
+              El proceso de Poisson se utiliza para modelar el número de
+              transacciones en un mercado financiero.
+            </p>
+          </li>
+          <li>
+            <strong>Seguros</strong>
+            <p>
+              El proceso de Poisson se utiliza para modelar el número de
+              reclamaciones de seguros que se presentan en un período de tiempo
+              determinado.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="tema4" class="slide">
+        <h1>Distribuciones de probabilidad</h1>
+        <h2>Discretas</h2>
+        <h3>Uniforme Discreta</h3>
+        <p>
+          La distribución uniforme discreta es una distribución de probabilidad
+          que se utiliza para modelar situaciones en las que todos los valores
+          posibles de una variable aleatoria tienen la misma probabilidad de
+          ocurrir. Es decir, es una distribución de probabilidad que se aplica a
+          variables discretas (que toman un número finito de valores) y en la
+          que cada valor tiene la misma probabilidad de ser seleccionado.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("nav ul li a");
+        const headerHeight = document.querySelector("header").offsetHeight;
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            const targetHref = this.getAttribute("href");
+
+            // Check if the link is to another page
+            if (targetHref === "index.html" || !targetHref.startsWith("#")) {
+              return;
+            }
+
+            event.preventDefault();
+
+            const targetId = targetHref.substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            document.querySelectorAll(".slide").forEach((section) => {
+              section.style.transform = "translateX(-100%)";
+              section.style.opacity = "0";
+              section.style.position = "absolute";
+            });
+
+            targetElement.style.position = "relative";
+            targetElement.style.transform = "translateX(0)";
+            targetElement.style.opacity = "1";
+
+            // Scroll to the target element with a slight delay to allow for the transform to apply
+            setTimeout(() => {
+              window.scrollTo({
+                top: targetElement.offsetTop - headerHeight,
+                behavior: "smooth",
+              });
+            }, 50);
+
+            history.pushState(null, "", `#${targetId}`);
+          });
+        });
+
+        // Handle the initial load
+        const initialHash = window.location.hash.substring(1);
+        if (initialHash) {
+          const initialElement = document.getElementById(initialHash);
+          if (initialElement) {
+            document.querySelectorAll(".slide").forEach((section) => {
+              section.style.transform = "translateX(-100%)";
+              section.style.opacity = "0";
+              section.style.position = "absolute";
+            });
+
+            initialElement.style.transform = "translateX(0)";
+            initialElement.style.opacity = "1";
+            initialElement.style.position = "relative";
+
+            // Scroll to the initial element with a slight delay to allow for the transform to apply
+            setTimeout(() => {
+              window.scrollTo({
+                top: initialElement.offsetTop - headerHeight,
+                behavior: "smooth",
+              });
+            }, 50);
+          }
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const dadoButton = document.getElementById("dado");
+        dadoButton.addEventListener("click", () => {
+          const num1 = Math.floor(Math.random() * 6) + 1;
+          const num2 = Math.floor(Math.random() * 6) + 1;
+
+          const randomNumber = Math.floor(Math.random() * 6) + 1;
+          const imagePath = `images/dado${randomNumber}.png`; // Ruta corregida
+          dadoButton.style.backgroundImage = `url(${imagePath})`;
+
+          dadoButton.style.backgroundRepeat = "no-repeat"; // Evitar que se repita la imagen
+
+          document.getElementById("num1").textContent = num1;
+          document.getElementById("num2").textContent = num2;
+          document.getElementById("resultado").textContent = num1 + num2;
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const monedaButton = document.getElementById("moneda");
+        const caras = ["images/cara.png", "images/sello.png"]; // Rutas corregidas
+        let index = 0; // Índice para alternar entre cara y sello
+
+        monedaButton.style.backgroundImage = `url(${caras[index]})`;
+        monedaButton.style.backgroundSize = "contain"; // Ajustar tamaño de la imagen al botón
+        monedaButton.style.backgroundRepeat = "no-repeat"; // Evitar que se repita la imagen
+
+        monedaButton.addEventListener("click", () => {
+          index = (index + 1) % caras.length; // Cambiar el índice entre 0 y 1
+          monedaButton.style.backgroundImage = `url(${caras[index]})`;
+        });
+      });
+
+      // Añadir la funcionalidad de cambio de imagen al hacer clic en la imagen de ruido blanco
+      document.addEventListener("DOMContentLoaded", function () {
+        const ruidoBlancoImg = document.getElementById("ruidoBlanco");
+        ruidoBlancoImg.addEventListener("click", () => {
+          const currentSrc = ruidoBlancoImg.getAttribute("src");
+          const newSrc = currentSrc.includes("noise_gray.png")
+            ? "/LineasDeEspera v2/images/noise_color.png"
+            : "/LineasDeEspera v2/images/noise_gray.png";
+          ruidoBlancoImg.setAttribute("src", newSrc);
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const mostrarGraficoBtn = document.getElementById("mostrarGrafico");
+        const graficoContainer = document.getElementById("graficoContainer");
+
+        // Función para mostrar la imagen del gráfico
+        function mostrarImagenGrafico(archivo) {
+          const img = document.createElement("img");
+          img.src = archivo;
+          img.alt = "Gráfico de ejemplo";
+          graficoContainer.innerHTML = "";
+          graficoContainer.appendChild(img);
+        }
+
+        // Evento click del botón para mostrar el gráfico
+        mostrarGraficoBtn.addEventListener("click", function () {
+          // Aquí debes insertar el nombre del archivo de imagen generado por Python
+          const nombreArchivo = "/LineasDeEspera v2/images/grafico.png"; // Reemplazar con el nombre del archivo generado
+          mostrarImagenGrafico(nombreArchivo);
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const generarNumeroAleatorioButton = document.getElementById(
+          "generarNumeroAleatorio"
+        );
+        const resultadoNumeroAleatorio = document.getElementById(
+          "resultadoNumeroAleatorio"
+        );
+
+        generarNumeroAleatorioButton.addEventListener("click", function () {
+          // Generar número aleatorio entre 0 y 1
+          const numeroAleatorio = Math.random();
+
+          // Mostrar el número aleatorio generado
+          resultadoNumeroAleatorio.textContent = `Número aleatorio generado: ${numeroAleatorio}`;
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const simularRuidoButton =
+          document.getElementById("simularRuidoButton");
+        const resultadoSimulacion = document.getElementById(
+          "resultadoSimulacion"
+        );
+
+        simularRuidoButton.addEventListener("click", function () {
+          // Simulación de ruido: generación de un valor aleatorio para representar el ruido
+          const ruido = Math.random() * 10; // Ejemplo de generación de un número aleatorio entre 0 y 10
+
+          // Mostrar el resultado de la simulación
+          resultadoSimulacion.textContent = `Nivel de ruido simulado: ${ruido.toFixed(
+            2
+          )}`;
+        });
+      });
+    </script>
+  </body>
+</html>

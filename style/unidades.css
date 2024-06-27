@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Adjust this value according to your header height */
+    position: relative;
+}
+
+.slide {
+    max-width: 1000px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.slide:target {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+h1 {
+    color: red;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+#dado {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    width: 100px; /* Ajusta el tamaño del dado según sea necesario */
+    height: 100px; /* Ajusta el tamaño del dado según sea necesario */
+    background-image: url('../images/dado1.png');
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#dado:hover {
+    transform: scale(1.1);
+}
+
+.moneda-button {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 1rem auto;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.moneda-button:hover {
+    transform: scale(1.1);
+}
+
+ button {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#mostrarGrafico button:hover {
+    background-image: url('../images/calculosmatematicos.gif');
+
+    transform: scale(1.1);
+}
